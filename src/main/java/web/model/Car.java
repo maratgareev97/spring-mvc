@@ -1,7 +1,10 @@
 package web.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Car {
 
+    @Autowired
     private Long id;
     private String model;
     private Integer series;

@@ -28,15 +28,7 @@ public class HelloController {
     public String Cars(HttpServletRequest request, ModelMap modelMap) {
         int count = Integer.parseInt(request.getParameter("n"));
         CarService carService = new CarServiseImpl();
-        if (count >= 5) {
-            count = 5;
-        }
-        List<String> mess = new ArrayList<>();
-        for (int i = 0; i < count; i++) {
-            mess.add(carService.listCar().get(i));
-
-        }
-        modelMap.addAttribute("mess", mess);
+        modelMap.addAttribute("mess", carService.countCar(count));
         return "cars";
     }
 
